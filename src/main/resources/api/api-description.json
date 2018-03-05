@@ -1,0 +1,124 @@
+{
+	"addItemsToBag":{
+		"api-name" : "addItemsToBag",
+		"Resource-Path" : "/api/order/v1/bags/",
+		"HTTP-method": "POST",
+		"Request":{
+			 "media-type" : ["application/json","application/xml"],
+			 "param":[
+					{ 
+						"param-name" : "bagGuid",	
+						"param-type" : "string",
+						"param-style": "QUERY"
+					},
+					{	
+						"param-name" : "userGuid",	
+						"param-type" : "string",	
+						"param-style": "QUERY"
+					},
+					{
+						"param-name" : "userId",	
+						"param-type" : "long",
+						"param-style": "QUERY"
+					},
+					{
+						"param-name" : "promocode",	
+						"param-type" : "string",	
+						"param-style": "QUERY"
+						},
+					{
+						"param-name" : "bagOptions",	
+						"param-type" : "string",	
+						"param-style": "QUERY"
+					},
+					{
+						"param-name" : "storeLocNumber",	
+						"param-type" : "long",	
+						"param-style": "QUERY"
+					},
+					{
+						"param-name" : "cardType",	
+						"param-type" : "string",	
+						"param-style": "QUERY"
+					},
+					{	
+						"param-name" : "registryId",	
+						"param-type" : "long",	
+						"param-style": "QUERY"
+					},
+					{
+						"param-name" : "channelType",	
+						"param-type" : "string",	
+						"param-style": "QUERY"
+					},
+					{
+						"param-name" : "scanStoreLocationNumber",	
+						"param-type" : "long",	
+						"param-style": "QUERY"
+					},
+					{
+						"param-name" : "loyaltyNumber",	
+						"param-type" : "string",	
+						"param-style": "QUERY"
+					},
+					{
+						"param-name" : "cmMmc",	
+						"param-type" : "string",	
+						"param-style": "QUERY"
+					},
+					{	
+						"param-name" : "partnerId",	
+						"param-type" : "string"	,
+						"param-style": "QUERY"
+					},
+					{
+						"param-name" : "linkShareId",	
+						"param-type" : "string",	
+						"param-style": "QUERY"
+					},
+					{
+						"param-name" : "dmsId",	
+						"param-type" : "string",	
+						"param-style": "QUERY"
+					},
+					{
+						"param-name" : "currencyCode",	
+						"param-type" : "string",	
+						"param-style": "QUERY"
+					},
+					{	
+						"param-name" : "loyaltyPoints",	
+						"param-type" : "boolean",	
+						"param-style": "QUERY"
+					},
+					{	
+						"param-name" : "freeShippingExpId",	
+						"param-type" : "string",	
+						"param-style": "QUERY"
+					},
+					{	
+						"param-name" : "isOneClickCheckout",	
+						"param-type" : "boolean",	
+						"param-style": "QUERY"
+					}
+			]
+		},	
+		"Response":{
+		  	"media-type" : ["application/json","application/xml"]
+		}
+		  
+		  
+	},
+	 "promotionsByPromoCode":{
+			"api-name" : "promotionsByPromoCode",
+			"Resource-Path" : "api/v1/promotions/promoCodes/{promocode}",
+			"{promocode}" :"string",
+			"HTTP-method": "GET",
+			"Request":[],
+			"Response":{
+			  	"media-type" : ["application/json","application/xml"]
+			}
+	
+	}
+	
+}

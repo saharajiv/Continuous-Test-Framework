@@ -1,0 +1,16 @@
+testcase1:{
+ pk:[product_id]
+ columns:[]
+ values-actual:[]
+ values-expected:[]
+	
+
+
+
+
+
+
+}
+
+prod_id|prod_name|
+1|abc|

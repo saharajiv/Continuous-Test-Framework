@@ -1,0 +1,1876 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<application xmlns="http://wadl.dev.java.net/2009/02">
+    <doc xmlns:jersey="http://jersey.java.net/" jersey:generatedBy="Jersey: 2.22.1 2015-10-07 10:54:41"/>
+    <doc xmlns:jersey="http://jersey.java.net/" jersey:hint="This is simplified WADL with user and core resources only. To get full WADL with extended resources use the query parameter detail. Link: http://l4688338:8180/api/application.wadl?detail=true"/>
+    <grammars/>
+    <resources base="http://l4688338:8180/api/">
+        <resource path="cnf/">
+            <resource path="v1/producers/{operation}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="operation" style="template" type="xs:string"/>
+                <method id="updateChangeNotificationProducer" name="PUT">
+                    <response>
+                        <representation mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="v1/producer/">
+                <method id="getCnfMessagingNodeProducerStatus" name="GET">
+                    <response>
+                        <representation mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="v1/producers/">
+                <method id="getChangeNotificationProducerStatus" name="GET">
+                    <response>
+                        <representation mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="v1/producer/{operation}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="operation" style="template" type="xs:string"/>
+                <method id="updateProducer" name="PUT">
+                    <response>
+                        <representation mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="order/v1/recommerce">
+            <resource path="/place">
+                <method id="placeThredupOrder" name="POST">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="order/v1/payment">
+            <resource path="/tender/validate">
+                <method id="validatePropcard" name="POST">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/tender/threedsecure/authenticate">
+                <method id="threeDSecureAuthenticate" name="POST">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/tender/authorize/void">
+                <method id="authorizeVoidTenders" name="PUT">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="accountFormat" style="query" type="xs:string"/>
+                        <representation mediaType="application/xml"/>
+                        <representation mediaType="application/json"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/xml"/>
+                        <representation mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/tender/threedsecure/lookup/{orderNumber}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="orderNumber" style="template" type="xs:string"/>
+                <method id="threeDSecureLookup" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="userId" style="query" type="xs:long"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/tender/threedsecure/lookup">
+                <method id="threeDSecureLookup" name="POST">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/tender/authorize">
+                <method id="authorizeTenders" name="POST">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="accountFormat" style="query" type="xs:string"/>
+                        <representation mediaType="application/xml"/>
+                        <representation mediaType="application/json"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/xml"/>
+                        <representation mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/applepay/validate">
+                <method id="validateURL" name="POST">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="url" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="domainName" style="query" type="xs:string"/>
+                        <representation mediaType="application/xml"/>
+                        <representation mediaType="application/json"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/xml"/>
+                        <representation mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="tax/1.0">
+            <resource path="/getTaxRate">
+                <method id="calculateTax" name="POST">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="order/v1">
+            <resource path="/bag/loyaltyPoints/">
+                <method id="getRewardPointsForBag" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="pointsId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="userId" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cardType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="bagId" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="promocode" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="loyaltyNumber" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/bags/{bagId}/promotions/">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="bagId" style="template" type="xs:string"/>
+                <method id="retrieveBagWalletOffers" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="userid" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="userGuid" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="bagGuid" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cardtype" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="loyaltyNumber" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="registryId" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="promocodes" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="newlyAutoProvisionedPromocodes" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cmMmc" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="partnerId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="linkShareId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="dmsId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="channelType" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/bags/items">
+                <method id="updateItemToBagWithUserId" name="POST">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="bagGuid" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="userId" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="promocode" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="bagOptions" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="storeLocNumber" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cardType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="registryId" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="channelType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="scanStoreLocationNumber" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="loyaltyNumber" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cmMmc" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="partnerId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="linkShareId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="dmsId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="currencyCode" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="freeShippingExpId" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/bags/merge">
+                <method id="mergeBagStatus" name="PATCH">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="userGuid" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="userId" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="promocode" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="bagOptions" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="storeLocNumber" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="loyaltyNumber" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cardType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="registryId" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="channelType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="loyaltyPoints" style="query" type="xs:boolean"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cmMmc" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="partnerId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="linkShareId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="dmsId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="currencyCode" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="freeShippingExpId" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method id="addToCurrentBag" name="PUT">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="userGuid" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="userId" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="promocode" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="bagOptions" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="storeLocNumber" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="loyaltyNumber" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cardType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="registryId" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="channelType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cmMmc" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="partnerId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="linkShareId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="dmsId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="currencyCode" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="freeShippingExpId" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method id="mergeBag" name="POST">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="userGuid" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="userId" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="guestUserGuid" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="guestUserId" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="channelType" style="query" type="xs:string"/>
+                    </request>
+                </method>
+            </resource>
+            <resource path="/bags/{bagGuid}/bagItems">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="bagGuid" style="template" type="xs:string"/>
+                <method id="updateItemsToBag" name="POST">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="promocode" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="bagOptions" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="storeLocNumber" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cardType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="registryId" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="channelType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="scanStoreLocationNumber" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="loyaltyNumber" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cmMmc" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="partnerId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="linkShareId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="dmsId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="currencyCode" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="freeShippingExpId" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/bags/bagItems">
+                <method id="updateItemsToBagWithUserId" name="POST">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="bagGuid" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="userId" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="promocode" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="bagOptions" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="storeLocNumber" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cardType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="registryId" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="channelType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="scanStoreLocationNumber" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="loyaltyNumber" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cmMmc" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="partnerId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="linkShareId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="dmsId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="currencyCode" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="freeShippingExpId" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/available">
+                <method id="getBigTicketAvailability" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="sku" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="zip" style="query" type="xs:int"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="quantity" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/bags/{bagGuid}/items">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="bagGuid" style="template" type="xs:string"/>
+                <method id="updateItemToBag" name="PATCH">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="promocode" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="bagOptions" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="storeLocNumber" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cardType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="registryId" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="channelType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="scanStoreLocationNumber" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="loyaltyNumber" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cmMmc" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="partnerId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="linkShareId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="dmsId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="currencyCode" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="loyaltyPoints" style="query" type="xs:boolean"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="freeShippingExpId" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/bags/{bagGuid}/items/{itemSequenceId}/">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="bagGuid" style="template" type="xs:string"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="itemSequenceId" style="template" type="xs:int"/>
+                <method id="deleteItemFromBag" name="DELETE">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="promocode" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="bagOptions" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="storeLocNumber" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="loyaltyNumber" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cardType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="registryId" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="gwpIndicator" style="query" type="xs:boolean"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="channelType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cmMmc" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="partnerId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="linkShareId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="dmsId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="currencyCode" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="loyaltyPoints" style="query" type="xs:boolean"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="freeShippingExpId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="mkpReservationId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="isOneClickCheckout" style="query" type="xs:boolean"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/bags/items/{itemSequenceId}/">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="itemSequenceId" style="template" type="xs:int"/>
+                <method id="deleteItemFromBag" name="DELETE">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="bagGuid" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="userId" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="promocode" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="bagOptions" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="storeLocNumber" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="loyaltyNumber" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cardType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="registryId" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="gwpIndicator" style="query" type="xs:boolean"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="channelType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cmMmc" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="partnerId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="linkShareId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="dmsId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="currencyCode" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="freeShippingExpId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="mkpReservationId" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/bags/{bagGuid}/uycapplicable/{option}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="bagGuid" style="template" type="xs:string"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="option" style="template" type="xs:boolean"/>
+                <method id="updateStoreUYCOption" name="PUT"/>
+            </resource>
+            <resource path="/bags/gifting">
+                <method id="updateItemsToBagWithPriceLock" name="POST">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="channelType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="bagGuid" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="upc" style="query" type="xs:long"/>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/bags/">
+                <method id="getBag" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="bagGuid" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="userGuid" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="userId" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="bagId" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="promocode" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="bagOptions" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="storeLocNumber" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cardType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="registryId" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="bagCount" style="query" type="xs:boolean"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="loyaltyPoints" style="query" type="xs:boolean"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="msa" style="query" type="xs:boolean"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="channelType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="loyaltyNumber" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="signInUser" style="query" type="xs:boolean"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cmMmc" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="partnerId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="linkShareId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="dmsId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="currencyCode" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="freeShippingExpId" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method id="addItemsToBag" name="POST">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="bagGuid" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="userGuid" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="userId" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="promocode" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="bagOptions" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="storeLocNumber" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cardType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="registryId" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="channelType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="scanStoreLocationNumber" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="loyaltyNumber" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cmMmc" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="partnerId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="linkShareId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="dmsId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="currencyCode" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="loyaltyPoints" style="query" type="xs:boolean"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="freeShippingExpId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="isOneClickCheckout" style="query" type="xs:boolean"/>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/bags/loyalty/{programName}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="programName" style="template" type="xs:string"/>
+                <method id="deleteUslId" name="DELETE">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="bagGuid" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="userGuid" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="bagId" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="userId" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="bagOption" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/bags/loyalty">
+                <method id="addUslIdToBag" name="POST">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="bagGuid" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="userGuid" style="query" type="xs:string"/>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method id="retrieveUslIds" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="bagGuid" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="userGuid" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="bagOption" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/bags/item/gifts">
+                <method id="getGiftOffersByItem" name="POST">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="upcId" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="quantity" style="query" type="xs:int"/>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/bag/{bagId}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="bagId" style="template" type="xs:long"/>
+                <method id="deleteBag" name="DELETE">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="channelType" style="query" type="xs:string"/>
+                    </request>
+                </method>
+            </resource>
+            <resource path="/bags/{bagGuid}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="bagGuid" style="template" type="xs:string"/>
+                <method id="deleteBag" name="DELETE">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="channelType" style="query" type="xs:string"/>
+                    </request>
+                </method>
+            </resource>
+            <resource path="/carts/{cartId}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cartId" style="template" type="xs:string"/>
+                <method id="createCartWithCartId" name="POST">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method id="deleteCart" name="DELETE"/>
+            </resource>
+            <resource path="/carts/{cartId}/items">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cartId" style="template" type="xs:string"/>
+                <method id="updateItemsToCart" name="POST">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/carts/{cartid}/items">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cartid" style="template" type="xs:string"/>
+                <method id="deleteCartItems" name="DELETE">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="upcNumber" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/carts/{cartId}/items/{upcId}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="upcId" style="template" type="xs:string"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cartId" style="template" type="xs:string"/>
+                <method id="deleteItemsFromCart" name="DELETE">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/carts">
+                <method id="createCart" name="POST">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cartId" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="customer/">
+            <resource path="v1/orders/{orderNumber}/returns/{shipmentNumber}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="shipmentNumber" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="orderNumber" style="template" type="xs:string"/>
+                <method id="getReturnedShipment" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="email" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="phoneNumber" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="q" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="_expand" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="giftLookupFlag" style="query" type="xs:boolean" default="false"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-CustomerID" style="header" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-SecurityToken" style="header" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-ClientId" style="header" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="v1/order/{reservationNumber}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="reservationNumber" style="template" type="xs:int"/>
+                <method id="cancelOrder" name="PUT">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="additionalNoteInfo" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="v1/orders/{orderNumber}/return/">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="orderNumber" style="template" type="xs:string"/>
+                <method id="submitReturn" name="POST">
+                    <request>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="shipment/v1/tracking/{trackingNumber}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="trackingNumber" style="template" type="xs:string"/>
+                <method id="trackShipment" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="carrierName" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="v1/order/reservationNumber/{reservationNumber}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="reservationNumber" style="template" type="xs:long"/>
+                <method id="getOrderDetailByReservationNumber" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="shipmentType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="shipment.upc.returnEnabled" style="query" type="xs:boolean"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="_expand" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-ClientId" style="header" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="v1/{customerId}/orders">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="customerId" style="template" type="xs:long"/>
+                <method id="getOrderHistory" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="startDateTimestamp" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="endDateTimestamp" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="_expand" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-SecurityToken" style="header" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="v1/return/reasonCodes">
+                <method id="getReturnReasonCodes" name="GET">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="v1/orders/">
+                <method id="getOrderDetailsByOrderNumber" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="orderNumbers" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="_expand" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-CustomerID" style="header" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-SecurityToken" style="header" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="v1/orders/{orderNumber}/return/calculation/">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="orderNumber" style="template" type="xs:string"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="returnLineItem" style="matrix" type="xs:string"/>
+                <method id="returnItemsCalcuation" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="returnEmail" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="email" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="phoneNumber" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="q" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="refundMethod" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="giftLookupFlag" style="query" type="xs:boolean" default="false"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-CustomerID" style="header" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-SecurityToken" style="header" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-ClientId" style="header" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="v1/order/{orderNumber}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="orderNumber" style="template" type="xs:string"/>
+                <method id="getOrderDetailByOrderNumber" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="email" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="phoneNumber" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="zipcode" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="q" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="shipmentType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="shipment.upc.returnEnabled" style="query" type="xs:boolean"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="_expand" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-CustomerID" style="header" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-SecurityToken" style="header" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-ClientId" style="header" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="v1/promotions">
+            <resource path="/promoCodes/{promocode}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="promocode" style="template" type="xs:string"/>
+                <method id="promotionsByPromoCode" name="GET">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/offers">
+                <method id="publicDealsAndPromotions" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="sortby" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/supc/{promotionId}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="promotionId" style="template" type="xs:int"/>
+                <method id="getSUPCForPromotionId" name="GET">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/product/productids/{productids}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="productids" style="template" type="xs:string"/>
+                <method id="productPromotions" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="numberOfPromotions" style="query" type="xs:int"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="fetchPromoCode" style="query" type="xs:boolean"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="order/v1/checkout">
+            <method id="placeOrderWithAllOptions" name="POST">
+                <response>
+                    <representation mediaType="application/json"/>
+                    <representation mediaType="application/xml"/>
+                </response>
+            </method>
+            <resource path="/tender/EGC/">
+                <method id="validateAndRetrieveEGCCardBalance" name="POST">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="userGuid" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="userId" style="query" type="xs:long"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/void/{orderNumber}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="orderNumber" style="template" type="xs:string"/>
+                <method id="cancelReservation" name="GET">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/scheduleDelivery">
+                <method id="scheduleDeliveryService" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="zip" style="query" type="xs:int"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/xml"/>
+                        <representation mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/validateGuestUserId">
+                <method id="isValidGuestUserID" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="userGuid" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="userId" style="query" type="xs:long"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/updateTender">
+                <method id="updateTenderDetails" name="POST">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/carts/{card_id}/deliveryoptions/">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="card_id" style="template" type="xs:string"/>
+                <method id="updateDeliveryDetails" name="POST">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/tender/express">
+                <method id="initiateExpresssCheckout" name="POST">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/gifting/place">
+                <method id="contributeForGroupGifting" name="POST">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/carts/{card_id}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="card_id" style="template" type="xs:string"/>
+                <method id="fetchCart" name="GET">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/mobile/oneclick/place">
+                <method id="oneClickOrder" name="POST">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/{card_id}/complete">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="card_id" style="template" type="xs:string"/>
+                <method id="completeOrder" name="POST">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="skipEps" style="query" type="xs:boolean"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/initiate">
+                <method id="initiateOrder" name="POST">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/tender/{tenderNumber}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="tenderNumber" style="template" type="xs:string"/>
+                <method id="retrieveEGCBalance" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="userGuid" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="userId" style="query" type="xs:long"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/expirePromoCode">
+                <method id="expirePromoCode" name="POST">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/updateSummary">
+                <method id="retrieveOrderSummary" name="POST">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/process">
+                <method id="processOrderForCheckout" name="POST">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/generateSiteOrderNumber">
+                <method id="getSiteOrderNumber" name="GET">
+                    <response>
+                        <representation mediaType="text/plain"/>
+                        <representation mediaType="text/html"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/tender/authenticate">
+                <method id="initiateAuthenticate" name="POST">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/process/tender">
+                <method id="initiatePayment" name="POST">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/points">
+                <method id="getRewardPoints" name="POST">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/place">
+                <method id="placeOrder" name="POST">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/tender/getpaymentstatus/{orderGUID}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="orderGUID" style="template" type="xs:string"/>
+                <method id="getPaymentStatus" name="GET">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/completeOrder/{cartId}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cartId" style="template" type="xs:string"/>
+                <method id="completeOrderForCart" name="POST">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="skipEps" style="query" type="xs:boolean"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/carts/deliveryoptions/{cartId}/">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cartId" style="template" type="xs:string"/>
+                <method id="updateCartDeliveryDetails" name="POST">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/3PO/carts/{cartId}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cartId" style="template" type="xs:string"/>
+                <method id="fetchCartItemDetails" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="promoCode" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/carts/{cartId}/tender">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cartId" style="template" type="xs:string"/>
+                <method id="updateCartTenderDetails" name="POST">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="order/v1/delivery">
+            <resource path="/delrepdate">
+                <method id="getEstimatedArrivalDate" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="orderNumber" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/methods">
+                <method id="retrieveDeliveryMethods" name="POST">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/sameday/eligible">
+                <method id="validateSameDayEligible" name="POST">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/deliverymethodfeerange">
+                <method id="getDeliveryMethodFeeRanges" name="GET">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/shoprunner/{user_id}/token">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="user_id" style="template" type="xs:string"/>
+                <method id="persistShopRunnerToken" name="POST">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="_context" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/{cartId}/deliveryoptions">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cartId" style="template" type="xs:string"/>
+                <method id="pinterestDeliveryMethods" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="zipcode" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="city" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="state" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="country" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="addressline1" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="addressline2" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/sameday/stores/update">
+                <method id="updateStoresStatus" name="POST">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="STORE_LOCATION_NBR" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="ZIP_CODE" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="ACTIVE_FLG" style="query" type="xs:boolean"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/sameday/stores/{STORE_LOCATION_NUMBER}/zipcodes">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="STORE_LOCATION_NUMBER" style="template" type="xs:int"/>
+                <method id="retrieveZIPcodesByStore" name="GET">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/sameday/stores/{STORE_LOCATION_NUMBER}/update">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="STORE_LOCATION_NUMBER" style="template" type="xs:string"/>
+                <method id="updateStoreStatus" name="POST">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="activate" style="query" type="xs:boolean"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="ZIP_CODE" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/sameday/stores">
+                <method id="retrieveStoresAndZIPcodes" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="STORE_LOCATION_NBR" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="ZIP_CODE" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="ACTIVE_FLG" style="query" type="xs:boolean"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="GET_ALL_STORES" style="query" type="xs:boolean"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/sameday/stores/updatestores">
+                <method id="updateStores" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="STORE_LOCATION_NBR" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="ZIP_CODE" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="ACTIVE_FLG" style="query" type="xs:boolean"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/shippingMethods">
+                <method id="getShippingRangeAndCharges" name="GET">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/carts/{cartId}/deliveryoptions">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="cartId" style="template" type="xs:string"/>
+                <method id="getDeliveryOptions" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="zipcode" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="city" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="state" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="country" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="addressLine1" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="addressLine2" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="promoCode" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="address/1.0">
+            <resource path="/validateAddress">
+                <method id="validateAddress" name="POST">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="order/v2/">
+            <resource path="orders/{orderNumber}/status">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="orderNumber" style="template" type="xs:string"/>
+                <method id="getOrderDetailByOrderNumberWrapper" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="email" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="phoneNumber" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="orders/{orderNumber}/estimateReturnRefund/">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="orderNumber" style="template" type="xs:string"/>
+                <method id="getEstimatedRefund" name="POST">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="verifyLookup" style="query" type="xs:boolean" default="false"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-CustomerID" style="header" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-SecurityToken" style="header" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-ClientId" style="header" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-Request" style="header" type="xs:string"/>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="pickupWindow/{zipCode}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="zipCode" style="template" type="xs:string"/>
+                <method id="getPickupWindows" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-Request" style="header" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-ClientId" style="header" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="pickupDate" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="vgcbasicinfo/{orderNumber}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="orderNumber" style="template" type="xs:string"/>
+                <method id="getVgcBasicInfo" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-Request" style="header" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-ClientId" style="header" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="orders/">
+                <method id="cancelOrder" name="PUT">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="reservationNumber" style="query" type="xs:int"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="orderNumber" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="additionalNoteInfo" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="email" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="phoneNumber" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="verifyLookup" style="query" type="xs:boolean" default="false"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-CustomerID" style="header" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-SecurityToken" style="header" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-ClientId" style="header" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-Request" style="header" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method id="getOrderHistory" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="customerId" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="orderDateFrom" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="orderDateTo" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="_expand" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-Request" style="header" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-SecurityToken" style="header" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="orders/{orderNumber}/return/">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="orderNumber" style="template" type="xs:string"/>
+                <method id="submitReturn" name="POST">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="verifyLookup" style="query" type="xs:boolean" default="false"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-CustomerID" style="header" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-SecurityToken" style="header" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-ClientId" style="header" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-Request" style="header" type="xs:string"/>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="trackings/{trackingNumber}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="trackingNumber" style="template" type="xs:string"/>
+                <method id="trackShipment" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="carrierName" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="militaryReturnFlag" style="query" type="xs:boolean" default="false"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-Request" style="header" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="orders/reservationNumber/{reservationNumber}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="reservationNumber" style="template" type="xs:long"/>
+                <method id="getOrderDetailByReservationNumber" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="shipment.type" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="filter" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="_expand" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-ClientId" style="header" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-Request" style="header" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="reasonCodes">
+                <method id="getReturnReasonCodes" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-Request" style="header" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="orders/{orderNumber}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="orderNumber" style="template" type="xs:string"/>
+                <method id="getOrderDetailByOrderNumber" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="email" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="phoneNumber" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="verifyLookup" style="query" type="xs:boolean" default="false"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="shipment.type" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="filter" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="zipcode" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="shipmentNumber" style="query" type="xs:int"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="_expand" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="giftLookupFlag" style="query" type="xs:boolean" default="false"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="trackingToken" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="shopKick" style="query" type="xs:boolean" default="false"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-CustomerID" style="header" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-SecurityToken" style="header" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-ClientId" style="header" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-Request" style="header" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="returnConfirmation">
+                <method id="getReturnConfirmation" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-ShipmentToken" style="header" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-Request" style="header" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="order/v1/promotions">
+            <resource path="/prodids/{prodids}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="prodids" style="template" type="xs:string"/>
+                <method id="productUPCPromotions" name="GET">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/promoCodes/{promocode}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="promocode" style="template" type="xs:string"/>
+                <method id="promotionsByPromoCode" name="GET">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/offers">
+                <method id="publicDealsAndPromotions" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="sortby" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/promoids/{promoids}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="promoids" style="template" type="xs:string"/>
+                <method id="promotionsByPromoIds" name="GET">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/supcs/{promotionCode}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="promotionCode" style="template" type="xs:string"/>
+                <method id="generateSUPCForPromoCode" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="numberOfSupc" style="query" type="xs:int"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-ClientId" style="header" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/supc/{promotionId}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="promotionId" style="template" type="xs:int"/>
+                <method id="getSUPCForPromotionId" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="customer_mail_id" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/product/productids/{productids}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="productids" style="template" type="xs:string"/>
+                <method id="productPromotions" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="numberOfPromotions" style="query" type="xs:int"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="fetchPromoCode" style="query" type="xs:boolean"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="/error/v1/">
+            <resource path="modules/{moduleIds}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="moduleIds" style="template" type="xs:string"/>
+                <method id="modules" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="_fields" style="query" type="xs:string" default=""/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="modules">
+                <method id="modules" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="global" style="query" type="xs:boolean"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="_fields" style="query" type="xs:string" default=""/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="errors/{errorCodes}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="errorCodes" style="template" type="xs:string"/>
+                <method id="errors" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="_fields" style="query" type="xs:string" default=""/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="platform/v1/raml">
+            <method id="getIndex" name="GET">
+                <response>
+                    <representation mediaType="*/*"/>
+                </response>
+            </method>
+            <resource path="/files">
+                <method id="loadRamlFiles" name="GET">
+                    <response>
+                        <representation mediaType="*/*"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/_static/{resourcePath:.*}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="resourcePath" style="template" type="xs:string"/>
+                <method id="getStaticResource" name="GET">
+                    <response>
+                        <representation mediaType="*/*"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="order/v2/promotions">
+            <resource path="/prodids/{prodids}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="prodids" style="template" type="xs:string"/>
+                <method id="productUPCPromotions" name="GET">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/promoCodes/{promocode}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="promocode" style="template" type="xs:string"/>
+                <method id="promotionsByPromoCode" name="GET">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/offers">
+                <method id="publicDealsAndPromotions" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="sortby" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/promotionspromoids/{promoids}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="promoids" style="template" type="xs:string"/>
+                <method id="promotionsDetailsByPromoIds" name="GET">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/bonousoffers/{offercode}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="offercode" style="template" type="xs:string"/>
+                <method id="retrieveBonousOffers" name="GET">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/storeoffers">
+                <method id="retrieveStoreModeOffers" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="userGuid" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="storeNumber" style="query" type="xs:long"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/promoids/{promoids}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="promoids" style="template" type="xs:string"/>
+                <method id="promotionsByPromoIds" name="GET">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/supcs/{promotionCode}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="promotionCode" style="template" type="xs:string"/>
+                <method id="generateSUPCForPromoCode" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="numberOfSupc" style="query" type="xs:int"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="X-Macys-ClientId" style="header" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/supcbatch/{promoCodeId}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="promoCodeId" style="template" type="xs:string"/>
+                <method id="generateSUPCForPromoCode" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="numberOfSupc" style="query" type="xs:int"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="requestId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="pageNumber" style="query" type="xs:int"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="returnPromotionId" style="header" type="xs:boolean"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="returnPromocodeId" style="header" type="xs:boolean"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/shareOffer">
+                <method id="shareOffer" name="POST">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/getPromotion">
+                <method id="getPromotion" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="promoID" style="query" type="xs:int"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="groupTypes" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/searchPromotions">
+                <method id="searchPromotions" name="POST">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/promotionInfo">
+                <method id="getPromotionInfo" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="triggerType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="discountTargetType" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/supctype/{supcType}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="supcType" style="template" type="xs:string"/>
+                <method id="getPromotionListBySupcType" name="GET">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/supc/{promotionId}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="promotionId" style="template" type="xs:int"/>
+                <method id="getSUPCForPromotionId" name="GET">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/bonusoffers/{offercode}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="offercode" style="template" type="xs:string"/>
+                <method id="retrieveBonusOffers" name="GET">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/product/productids/{productids}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="productids" style="template" type="xs:string"/>
+                <method id="productPromotions" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="numberOfPromotions" style="query" type="xs:int"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="fetchPromoCode" style="query" type="xs:boolean"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="order/v3/promotions">
+            <resource path="/product/productids/{productids}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="productids" style="template" type="xs:string"/>
+                <method id="productPromotions" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="numberOfPromotions" style="query" type="xs:int"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="fetchPromoCode" style="query" type="xs:boolean"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="_filter" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="_fields" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="tuxs/v1">
+            <resource path="/getReservationDetails">
+                <method id="getTuxedoReservations" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="reservationSet" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="services/">
+            <resource path="v1/customproperty/{propertyName}/update">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="propertyName" style="template" type="xs:string"/>
+                <method id="updatePropertyValue" name="PUT">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="propertyValue" style="query" type="xs:string"/>
+                        <representation mediaType="application/json"/>
+                    </request>
+                    <response>
+                        <representation mediaType="*/*"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="v1/customproperty/{propertyName}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="propertyName" style="template" type="xs:string"/>
+                <method id="getPropertyValue" name="GET">
+                    <response>
+                        <representation mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="v1/customproperty">
+                <method id="getCustomProperties" name="GET">
+                    <response>
+                        <representation mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="order/starlight/promotions">
+            <resource path="/promoid/{promoid}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="promoid" style="template" type="xs:int"/>
+                <method id="updatePromotion" name="PUT">
+                    <request>
+                        <representation mediaType="text/plain"/>
+                    </request>
+                    <response>
+                        <representation mediaType="text/plain"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="messaging/">
+            <resource path="v1/consumers/{consumerName}/update/{count}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="consumerName" style="template" type="xs:string"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="count" style="template" type="xs:int"/>
+                <method id="updateConcurrentConsumers" name="PUT"/>
+            </resource>
+            <resource path="v1/consumers">
+                <method id="getEMSConsumers" name="GET">
+                    <response>
+                        <representation mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="v1/consumers/{consumerName}/{operation}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="consumerName" style="template" type="xs:string"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="operation" style="template" type="xs:string"/>
+                <method id="processConsumerOperation" name="PUT">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="type" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="/test/v1/">
+            <resource path="testMultipleErrors">
+                <method id="testMultipleErrors" name="GET">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="testError">
+                <method id="testError" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="withoutMessage" style="query" type="xs:boolean" default="false"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="batch/v1">
+            <resource path="/updateJobSchedule">
+                <method id="updateJobSchedule" name="POST">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="JobId" style="header" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="CronExpr" style="header" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/getJobSchedule">
+                <method id="getJobSchedule" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="JobId" style="header" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+    </resources>
+</application>

@@ -1,0 +1,20 @@
+<resource path="v1/promotions">
+            <resource path="/promoCodes/{promocode}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="promocode" style="template" type="xs:string"/>
+                <method id="promotionsByPromoCode" name="GET">
+                    <response>
+                        <representation mediaType="application/json"/>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            
+            
+      "promotionsByPromoCode":{
+				"api-name" : "promotionsByPromoCode",
+				"Resource-Path" : "v1/promotions/promoCodes/{promocode}",
+				"{promocode}" :"string"
+				"HTTP-method": "GET",
+				"Request":{
+				}
+				      

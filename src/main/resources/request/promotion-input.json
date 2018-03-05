@@ -1,0 +1,8 @@
+{
+	"promocode1":[
+		{
+				"api-name":"promotionsByPromoCode",
+				"promocode" :"GREAT"
+		}
+	]
+}
